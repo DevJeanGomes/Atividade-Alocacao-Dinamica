@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *v = NULL;
+    int num, tam = 0;
+
+    while (1) {
+        printf("Digite um numero (negativo para parar): ");
+        scanf("%d", &num);
+
+        if (num < 0) break;
+
+        v = (int *) realloc(v, (tam + 1) * sizeof(int));
+        v[tam++] = num;
+    }
+
+    printf("Valores lidos:\n");
+    for (int i = 0; i < tam; i++) {
+        printf("%d ", v[i]);
+    }
+
+    free(v);
+    return 0;
+}
