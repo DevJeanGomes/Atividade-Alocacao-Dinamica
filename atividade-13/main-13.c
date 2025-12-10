@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>   // necessário para o rand()
 
+//função que receba um valor, retorne 1 caso o valor esteja na matriz ou retorne 0 caso não esteja na matriz.
 int busca(int **m, int l, int c, int valor) {
     for (int i = 0; i < l; i++)
         for (int j = 0; j < c; j++)
@@ -10,13 +12,14 @@ int busca(int **m, int l, int c, int valor) {
 }
 
 int main() {
+	
     int l, c, x;
-
+	
     printf("Linhas: ");
-    scanf("%d", &l);
+    	scanf("%d", &l);
 
     printf("Colunas: ");
-    scanf("%d", &c);
+    	scanf("%d", &c);
 
     int **m = (int **) malloc(l * sizeof(int*));
 
@@ -24,18 +27,35 @@ int main() {
         m[i] = (int *) malloc(c * sizeof(int));
     }
 
-    for (int i = 0; i < l; i++)
-        for (int j = 0; j < c; j++)
-            scanf("%d", &m[i][j]);
+    // gerador de números aleatórios
+    srand(time(NULL));
 
-    printf("Valor para buscar: ");
-    scanf("%d", &x);
+    // FOR para preencher a matriz com valores aleatórios
+    for (int i = 0; i < l; i++) {
+        for (int j = 0; j < c; j++) {
+            m[i][j] = rand() % 100; 
+        }
+    }
+
+    printf("\nValor para buscar: ");
+    	scanf("%d", &x);
 
     printf("Resultado: %d\n", busca(m, l, c, x));
-
+    
+    //Mostrar a matriz gerada na tela
+    printf("\nMatriz gerada:\n");
+    for (int i = 0; i < l; i++) {
+        for (int j = 0; j < c; j++) {
+            printf("%3d ", m[i][j]);
+        }
+        printf("\n");
+    }
+	
+    system("pause");
+	
     for (int i = 0; i < l; i++)
         free(m[i]);
-    free(m);
+    		free(m);
 
     return 0;
 }
