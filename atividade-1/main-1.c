@@ -27,6 +27,8 @@ int main() {
         p++;
     }
 
+    system("pause");
+
     //(d) Libere a memória alocada.
     free(inicio);
 
