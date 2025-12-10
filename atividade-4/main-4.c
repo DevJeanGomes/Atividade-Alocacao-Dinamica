@@ -36,7 +36,7 @@ int main() {
         }
     }
 
-    system("pause");
+    system("\n pause");
 
     free(str);
 
