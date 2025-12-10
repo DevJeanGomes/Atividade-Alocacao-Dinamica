@@ -1,14 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//PS: essa tava foda de fazer, tive que pedir uma ajuda maior de novo
+
 int main() {
+	
     int bytes, *mem, pos, op, valor;
 
     printf("Digite o tamanho da memoria (em bytes, multiplo de %d): ", sizeof(int));
-    scanf("%d", &bytes);
+    	scanf("%d", &bytes);
 
     if (bytes % sizeof(int) != 0) {
+    	
         printf("Tamanho invalido!\n");
+        
         return 1;
     }
 
@@ -18,22 +23,29 @@ int main() {
 
     do {
         printf("\n1 - Inserir valor\n2 - Consultar valor\n0 - Sair\nOpcao: ");
-        scanf("%d", &op);
+        	scanf("%d", &op);
 
         if (op == 1) {
+        	
             printf("Posicao: ");
-            scanf("%d", &pos);
+            	scanf("%d", &pos);
+            	
             printf("Valor: ");
-            scanf("%d", &valor);
+            	scanf("%d", &valor);
+            	
             mem[pos] = valor;
+            
         } else if (op == 2) {
+        	
             printf("Posicao: ");
-            scanf("%d", &pos);
+            	scanf("%d", &pos);
+            	
             printf("Valor na posicao: %d\n", mem[pos]);
         }
 
     } while (op != 0);
 
     free(mem);
+    
     return 0;
 }
