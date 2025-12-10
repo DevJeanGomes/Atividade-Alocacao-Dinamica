@@ -26,7 +26,7 @@ int main() {
         scanf(" %[^\n]", str);
 
     ////imprime a string sem suas vogais.
-    printf("\nString sem vogais: /n");
+    printf("\n String sem vogais: /n ");
 
     for (int i = 0; str[i] != '\0'; i++) {
         char c = str[i];
