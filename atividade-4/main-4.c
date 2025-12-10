@@ -25,9 +25,9 @@ int main() {
     printf("Digite o texto: ");
         scanf(" %[^\n]", str);
 
-    ////imprime a string sem suas vogais.
-    printf("\n String sem vogais: /n ");
+    printf(" /n String sem vogais: /n ");
 
+    //imprime a string sem suas vogais.
     for (int i = 0; str[i] != '\0'; i++) {
         char c = str[i];
         if (!(c=='a'||c=='e'||c=='i'||c=='o'||c=='u'||
