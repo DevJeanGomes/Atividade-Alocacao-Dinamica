@@ -32,11 +32,11 @@ int main() {
         char c = str[i];
         if (!(c=='a'||c=='e'||c=='i'||c=='o'||c=='u'||
               c=='A'||c=='E'||c=='I'||c=='O'||c=='U')) {
-            printf("%c", c);
+            printf("%c\n", c);
         }
     }
 
-    system("\n pause");
+    system("pause");
 
     free(str);
 
